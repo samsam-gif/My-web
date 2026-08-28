@@ -1,0 +1,90 @@
+company:
+  name: "AI Company Command Center"
+  version: "1.0.0"
+  tagline: "Autonomous Multi-Agent Enterprise Operations"
+
+agents:
+  ceo:
+    name: "Chief Executive Officer"
+    role: "Strategic Orchestrator & Project Planner"
+    icon: "Crown"
+    color: "#EAB308"
+    autonomy_level: "HIGH"
+  sales:
+    name: "Sales Director"
+    role: "Lead Qualification & Deal Architect"
+    icon: "TrendingUp"
+    color: "#3B82F6"
+    autonomy_level: "MEDIUM"
+  client:
+    name: "Client Relations Partner"
+    role: "User Feedback & Client Communications"
+    icon: "Users"
+    color: "#10B981"
+    autonomy_level: "MEDIUM"
+  design:
+    name: "Lead Product Designer"
+    role: "UI/UX Architecture & Style System Generator"
+    icon: "Palette"
+    color: "#EC4899"
+    autonomy_level: "HIGH"
+  developer:
+    name: "Principal Full-Stack Developer"
+    role: "Code Construction & Build Executor"
+    icon: "Code"
+    color: "#8B5CF6"
+    autonomy_level: "MEDIUM"
+  qa:
+    name: "Quality Assurance Specialist"
+    role: "Automated Testing, Verification & Regression Auditor"
+    icon: "CheckCircle"
+    color: "#06B6D4"
+    autonomy_level: "HIGH"
+  security:
+    name: "Cybersecurity Officer"
+    role: "Vulnerability Auditor, Static Code & Sandbox Guard"
+    icon: "ShieldAlert"
+    color: "#EF4444"
+    autonomy_level: "HIGH"
+  deployment:
+    name: "DevOps & Release Engineer"
+    role: "Packaging, Artifact Delivery & Deployment Gate"
+    icon: "Rocket"
+    color: "#F97316"
+    autonomy_level: "LOW"
+  documentation:
+    name: "Lead Technical Writer"
+    role: "API Reference, User Guides & Architecture Docs"
+    icon: "BookOpen"
+    color: "#64748B"
+    autonomy_level: "HIGH"
+
+model_router:
+  default_provider: "gemini"
+  timeout_seconds: 45
+  max_retries: 3
+  providers:
+    gemini:
+      model: "gemini-2.5-flash"
+      priority: 1
+      enabled: true
+    openai:
+      model: "gpt-4o-mini"
+      priority: 2
+      enabled: false
+    anthropic:
+      model: "claude-3-5-sonnet"
+      priority: 3
+      enabled: false
+
+security:
+  isolation_mode: "strict"
+  allowed_project_root: "./projects"
+  disallowed_commands:
+    - "rm -rf /"
+    - "mkfs"
+    - "dd if=/dev"
+    - ":(){ :|:& };:"
+    - "chmod -R 777 /"
+    - "shutdown"
+    - "reboot"

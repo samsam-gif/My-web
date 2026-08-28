@@ -1,0 +1,6 @@
+{
+  "name": "AI Company Command Center",
+  "description": "Autonomous AI Company Command Center featuring multi-agent workflow orchestration, model routing, security isolation, and real-time operations dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
